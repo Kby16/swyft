@@ -71,16 +71,18 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                123 Business Street
+                169 MADISON AVE STE 2578<br />
+                NEW YORK, NY 10016
               </li>
-              <li className="text-gray-400">
-                San Francisco, CA 94105
+              <li>
+                <a href="mailto:info@swyft.cx" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  info@swyft.cx
+                </a>
               </li>
-              <li className="text-gray-400">
-                contact@swyft.com
-              </li>
-              <li className="text-gray-400">
-                +1 (555) 123-4567
+              <li>
+                <a href="tel:+1234567890" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  +1 (234) 567-890
+                </a>
               </li>
             </ul>
           </div>

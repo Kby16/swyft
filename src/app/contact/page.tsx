@@ -54,7 +54,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Email</h3>
-                    <p className="text-gray-300">contact@swyft.com</p>
+                    <a href="mailto:info@swyft.cx" className="text-gray-300 hover:text-blue-400 transition-colors">
+                      info@swyft.cx
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -77,7 +79,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Address</h3>
-                    <p className="text-gray-300">123 Business Street, San Francisco, CA 94105</p>
+                    <p className="text-gray-300">169 MADISON AVE STE 2578, NEW YORK, NY 10016</p>
                   </div>
                 </div>
               </div>
