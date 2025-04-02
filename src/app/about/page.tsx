@@ -1,3 +1,5 @@
+'use client';
+
 const team = [
   {
     name: 'John Doe',
@@ -27,7 +29,7 @@ export default function AboutPage() {
             About Swyft
           </h1>
           <p className="text-xl text-center max-w-2xl mx-auto mb-12">
-            We're passionate about creating exceptional customer experiences through innovative Braze solutions
+            We&apos;re passionate about creating exceptional customer experiences through innovative Braze solutions
           </p>
         </div>
       </section>
@@ -39,7 +41,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
               <p className="text-gray-300 mb-6">
-                At Swyft, we're dedicated to helping businesses transform their customer engagement strategies through expert Braze implementation and optimization. Our mission is to empower companies to create meaningful connections with their customers.
+                At Swyft, we&apos;re dedicated to helping businesses transform their customer engagement strategies through expert Braze implementation and optimization. Our mission is to empower companies to create meaningful connections with their customers.
               </p>
               <p className="text-gray-300">
                 We believe that exceptional customer experiences are the key to business growth and success. Through our deep expertise in Braze and customer engagement, we help our clients achieve their goals and exceed customer expectations.

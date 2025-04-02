@@ -1,3 +1,5 @@
+'use client';
+
 export default function CareersPage() {
   const jobOpenings = [
     {
@@ -36,7 +38,7 @@ export default function CareersPage() {
             Join Our Team
           </h1>
           <p className="text-xl text-center max-w-2xl mx-auto mb-12">
-            Be part of a team that's transforming customer experiences through innovative technology
+            Be part of a team that&apos;s transforming customer experiences through innovative technology
           </p>
         </div>
       </section>
@@ -127,7 +129,7 @@ export default function CareersPage() {
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-12 shadow-lg border border-gray-800 max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Start Your Journey</h2>
             <p className="text-xl text-gray-300 mb-8 text-center">
-              Don't see the perfect role? We're always looking for talented individuals. Send us your resume and tell us about yourself.
+              Don&apos;t see the perfect role? We&apos;re always looking for talented individuals. Send us your resume and tell us about yourself.
             </p>
             <form className="space-y-6">
               <div>
@@ -163,7 +165,7 @@ export default function CareersPage() {
                   name="message"
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Tell us about yourself and why you'd like to join our team"
+                  placeholder="Tell us about yourself and why you&apos;d like to join our team"
                 ></textarea>
               </div>
               <button

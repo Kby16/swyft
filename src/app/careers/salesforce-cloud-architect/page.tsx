@@ -1,3 +1,5 @@
+'use client';
+
 export default function SalesforceCloudArchitectPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
@@ -77,7 +79,7 @@ export default function SalesforceCloudArchitectPage() {
                   <svg className="w-6 h-6 text-blue-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Master's degree in Computer Science, Information Technology, or related field.</span>
+                  <span>Master&apos;s degree in Computer Science, Information Technology, or related field.</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-6 h-6 text-blue-600 mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +112,7 @@ export default function SalesforceCloudArchitectPage() {
                   The referral program is designed to help us find the best talent through our existing network of professionals.
                 </p>
                 <p className="text-gray-300">
-                  To submit a referral, please contact our HR department with the candidate's details and resume.
+                  To submit a referral, please contact our HR department with the candidate&apos;s details and resume.
                 </p>
               </div>
             </div>
