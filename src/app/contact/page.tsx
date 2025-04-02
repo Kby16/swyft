@@ -34,7 +34,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl text-center max-w-2xl mx-auto mb-12">
-            Let's discuss how we can help you transform your customer experience with Braze
+            Let&apos;s discuss how we can help you transform your customer experience with Braze
           </p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-800">
               <h2 className="text-3xl font-bold mb-8">Send us a Message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Name
@@ -95,6 +95,8 @@ export default function ContactPage() {
                     type="text"
                     id="name"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Your name"
                   />
@@ -107,8 +109,24 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    placeholder="Your company"
                   />
                 </div>
                 <div>
@@ -118,6 +136,8 @@ export default function ContactPage() {
                   <textarea
                     id="message"
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Your message"

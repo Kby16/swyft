@@ -1,23 +1,5 @@
 'use client';
 
-const team = [
-  {
-    name: 'John Doe',
-    role: 'Co Founder',
-    image: '/team/john-doe.jpg'
-  },
-  {
-    name: 'Rebecca Hughes',
-    role: 'Designer',
-    image: '/team/rebecca-hughes.jpg'
-  },
-  {
-    name: 'Justin Lewis',
-    role: 'Developer',
-    image: '/team/justin-lewis.jpg'
-  }
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">

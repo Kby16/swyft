@@ -9,10 +9,10 @@ export default function ServicesPage() {
       <section className="relative py-32 px-4">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-transparent"></div>
         <div className="container mx-auto relative">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Our Services
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl text-gray-300 max-w-2xl">
             Comprehensive Braze solutions to enhance your customer engagement and drive business growth.
           </p>
         </div>
@@ -23,7 +23,7 @@ export default function ServicesPage() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Implementation Service */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-scale-in border border-gray-800">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-800">
               <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -39,7 +39,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Strategy Service */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-scale-in border border-gray-800" style={{ animationDelay: '0.2s' }}>
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-800">
               <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -55,7 +55,7 @@ export default function ServicesPage() {
             </div>
 
             {/* Optimization Service */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-scale-in border border-gray-800" style={{ animationDelay: '0.4s' }}>
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-8 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-800">
               <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -76,16 +76,15 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-600/10 via-blue-600/5 to-blue-600/10">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 animate-fade-in">
+          <h2 className="text-3xl font-bold mb-6">
             Ready to Transform Your Customer Experience?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Let's discuss how we can help you achieve your goals with Braze.
+          <p className="text-xl text-gray-300 mb-8">
+            Let&apos;s discuss how we can help you achieve your goals with Braze.
           </p>
           <Link 
             href="/contact" 
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors animate-fade-in"
-            style={{ animationDelay: '0.4s' }}
+            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Get in Touch
           </Link>

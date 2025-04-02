@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
@@ -78,7 +76,7 @@ export default function HomePage() {
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-12 shadow-lg border border-gray-800 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Customer Experience?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help you leverage Braze to create exceptional customer engagement
+              Let&apos;s discuss how we can help you leverage Braze to create exceptional customer engagement
             </p>
             <a
               href="/contact"
