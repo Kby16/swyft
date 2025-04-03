@@ -1,209 +1,274 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    phone: '',
+    resume: null as File | null,
+    coverLetter: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData({ ...formData, resume: e.target.files[0] });
+    }
   };
 
   const jobOpenings = [
     {
-      title: "Strategy Manager",
-      location: "New York, USA",
-      description: "Lead customer engagement strategies and drive growth through data-driven insights.",
-      requirements: [
-        "5+ years of experience in customer engagement strategy",
-        "Strong analytical and problem-solving skills",
-        "Experience with Braze or similar platforms",
-        "Excellent communication and leadership abilities"
-      ],
-      link: "/careers/strategy-manager"
-    },
-    {
       title: "Salesforce Cloud Architect",
       location: "New York, USA",
-      description: "Design and implement scalable cloud solutions for enterprise clients.",
+      description: "Lead the design and implementation of Salesforce solutions for our clients.",
       requirements: [
-        "8+ years of Salesforce development experience",
-        "Expert in cloud architecture and integration",
-        "Strong understanding of security best practices",
-        "Experience with Braze integration"
+        "5+ years of Salesforce architecture experience",
+        "Strong knowledge of cloud technologies",
+        "Excellent communication skills"
       ],
       link: "/careers/salesforce-cloud-architect"
+    },
+    {
+      title: "Strategy Manager",
+      location: "New York, USA",
+      description: "Develop and implement strategic initiatives to drive business growth.",
+      requirements: [
+        "3+ years of strategy consulting experience",
+        "Strong analytical skills",
+        "Project management expertise"
+      ],
+      link: "/careers/strategy-manager"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#1E1B4B] to-[#312E81] text-[#D1D5DB] relative overflow-hidden">
+      {/* Background Waves */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Main Wave */}
+        <div className="absolute bottom-0 left-0 w-full h-64">
+          <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#1E1B4B" fillOpacity="0.4" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
+
+        {/* Secondary Wave */}
+        <div className="absolute bottom-0 left-0 w-full h-48">
+          <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#5ECDEF" fillOpacity="0.25" d="M0,192L48,176C96,160,192,128,288,128C384,128,480,160,576,176C672,192,768,192,864,176C960,160,1056,128,1152,128C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
+
+        {/* End of Page Wave */}
+        <motion.div 
+          className="absolute bottom-0 left-0 w-full h-80"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#5ECDEF" fillOpacity="0.3" d="M0,256L48,240C96,224,192,192,288,186.7C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </motion.div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-transparent" />
-        <div className="container mx-auto px-4 relative">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+      <section className="relative py-20 overflow-hidden bg-gradient-to-b from-black via-[#1E1B4B] to-[#312E81]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#312E81]/10 to-transparent" />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-4 relative"
+        >
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center text-[#5ECDEF]">
             Join Our Team
           </h1>
-          <p className="text-xl text-center max-w-2xl mx-auto mb-12">
+          <p className="text-xl text-center max-w-2xl mx-auto mb-12 text-[#D1D5DB]">
             Be part of a team that&apos;s transforming customer experiences through innovative technology
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Job Openings Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gradient-to-b from-[#312E81] via-[#1E1B4B] to-black">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Current Openings</h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold mb-12 text-center text-[#5ECDEF]"
+          >
+            Current Openings
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {jobOpenings.map((job, index) => (
-              <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-800">
-                <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-2">{job.title}</h3>
-                <p className="text-blue-400 mb-4">{job.location}</p>
-                <p className="text-gray-300 mb-6">{job.description}</p>
-                <h4 className="text-lg font-semibold mb-3">Requirements:</h4>
-                <ul className="space-y-2 mb-6">
-                  {job.requirements.map((req, idx) => (
-                    <li key={idx} className="flex items-center text-gray-300">
-                      <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {req}
-                    </li>
+              <motion.div
+                key={job.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-black/50 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#818CF8]/10 hover:border-[#5ECDEF]/30 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-[#5ECDEF]">{job.title}</h3>
+                <p className="text-[#D1D5DB] mb-4">{job.location}</p>
+                <p className="text-[#D1D5DB] mb-6">{job.description}</p>
+                <h4 className="text-xl font-bold mb-4 text-[#5ECDEF]">Requirements</h4>
+                <ul className="list-disc list-inside space-y-2 text-[#D1D5DB] mb-6">
+                  {job.requirements.map((req, i) => (
+                    <li key={i}>{req}</li>
                   ))}
                 </ul>
-                <a
+                <motion.a
                   href={job.link}
-                  className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block bg-[#5ECDEF] text-black px-6 py-3 rounded-lg hover:bg-[#5ECDEF]/90 transition-colors"
                 >
-                  View Details
-                </a>
-              </div>
+                  Apply Now
+                </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600/5 via-blue-600/10 to-blue-600/5">
+      {/* Why Join Us Section */}
+      <section className="py-16 bg-gradient-to-b from-black via-[#1E1B4B] to-[#312E81]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why Join Us</h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-3xl font-bold mb-12 text-center text-[#5ECDEF]"
+          >
+            Why Join Us
+          </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-800">
-              <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Growth Opportunities</h3>
-              <p className="text-gray-300">
-                Continuous learning and development opportunities to advance your career
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-800">
-              <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Inclusive Culture</h3>
-              <p className="text-gray-300">
-                Join a diverse and collaborative environment where every voice matters
-              </p>
-            </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-800">
-              <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Work-Life Balance</h3>
-              <p className="text-gray-300">
-                Flexible working arrangements and comprehensive benefits package
-              </p>
-            </div>
+            {[
+              {
+                icon: "M13 10V3L4 14h7v7l9-11h-7z",
+                title: "Growth Opportunities",
+                description: "Continuous learning and development opportunities to advance your career"
+              },
+              {
+                icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+                title: "Innovative Culture",
+                description: "Work in a dynamic environment that encourages creativity and innovation"
+              },
+              {
+                icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+                title: "Competitive Benefits",
+                description: "Comprehensive benefits package including health insurance and 401(k)"
+              }
+            ].map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-black/50 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-[#818CF8]/10 hover:border-[#5ECDEF]/30 transition-all duration-300"
+              >
+                <div className="text-[#5ECDEF] mb-6">
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={value.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-[#5ECDEF]">{value.title}</h3>
+                <p className="text-[#D1D5DB]">{value.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16">
+      {/* Application Form Section */}
+      <section className="py-16 bg-gradient-to-b from-[#312E81] via-[#1E1B4B] to-black">
         <div className="container mx-auto px-4">
-          <div className="bg-white/5 backdrop-blur-sm rounded-xl p-12 shadow-lg border border-gray-800 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Start Your Journey</h2>
-            <p className="text-xl text-gray-300 mb-8 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-black/50 backdrop-blur-sm rounded-xl p-12 shadow-lg border border-[#818CF8]/10 hover:border-[#5ECDEF]/30 transition-all duration-300 max-w-2xl mx-auto"
+          >
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#5ECDEF]">Start Your Journey</h2>
+            <p className="text-xl text-[#D1D5DB] mb-8 text-center">
               Don&apos;t see the perfect role? We&apos;re always looking for talented individuals. Send us your resume and tell us about yourself.
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
-                </label>
+                <label htmlFor="name" className="block text-[#D1D5DB] mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
-                  name="name"
                   value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Your name"
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-black/50 border border-[#818CF8]/10 rounded-lg px-4 py-2 text-[#D1D5DB] focus:border-[#5ECDEF]/30 focus:outline-none"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
-                </label>
+                <label htmlFor="email" className="block text-[#D1D5DB] mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
-                  name="email"
                   value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="your@email.com"
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-black/50 border border-[#818CF8]/10 rounded-lg px-4 py-2 text-[#D1D5DB] focus:border-[#5ECDEF]/30 focus:outline-none"
+                  required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Tell us about yourself and why you&apos;d like to join our team"
-                ></textarea>
+                <label htmlFor="phone" className="block text-[#D1D5DB] mb-2">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full bg-black/50 border border-[#818CF8]/10 rounded-lg px-4 py-2 text-[#D1D5DB] focus:border-[#5ECDEF]/30 focus:outline-none"
+                />
               </div>
-              <button
+              <div>
+                <label htmlFor="resume" className="block text-[#D1D5DB] mb-2">Resume</label>
+                <input
+                  type="file"
+                  id="resume"
+                  onChange={handleFileChange}
+                  className="w-full bg-black/50 border border-[#818CF8]/10 rounded-lg px-4 py-2 text-[#D1D5DB] focus:border-[#5ECDEF]/30 focus:outline-none"
+                  accept=".pdf,.doc,.docx"
+                />
+              </div>
+              <div>
+                <label htmlFor="coverLetter" className="block text-[#D1D5DB] mb-2">Cover Letter</label>
+                <textarea
+                  id="coverLetter"
+                  value={formData.coverLetter}
+                  onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
+                  className="w-full bg-black/50 border border-[#818CF8]/10 rounded-lg px-4 py-2 text-[#D1D5DB] focus:border-[#5ECDEF]/30 focus:outline-none h-32"
+                />
+              </div>
+              <motion.button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full bg-[#5ECDEF] text-black px-6 py-3 rounded-lg hover:bg-[#5ECDEF]/90 transition-colors"
               >
                 Submit Application
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
