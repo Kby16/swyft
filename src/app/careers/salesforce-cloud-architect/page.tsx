@@ -132,7 +132,7 @@ export default function SalesforceCloudArchitectPage() {
                   The referral program is designed to help us find the best talent through our existing network of professionals.
                 </p>
                 <p className="text-[#D1D5DB]">
-                  To submit a referral, please contact our HR department with the candidate's details and resume.
+                  To submit a referral, please contact our HR department with the candidate&apos;s details and resume.
                 </p>
               </motion.div>
             </motion.div>
