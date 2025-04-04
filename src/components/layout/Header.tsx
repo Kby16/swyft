@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isBrazeFeaturesOpen, setIsBrazeFeaturesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +28,15 @@ export default function Header() {
     { name: 'Services', path: '/services' },
     { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' }
+  ];
+
+  const brazeFeatureItems = [
+    { name: 'Overview', path: '/braze-overview' },
+    { name: 'Features', path: '/braze-features' },
+    { name: 'Integrations', path: '/braze-integrations' },
+    { name: 'Pricing', path: '/braze-pricing' },
+    { name: 'Use Cases', path: '/braze-use-cases' },
+    { name: 'Support', path: '/braze-support' }
   ];
 
   return (
@@ -58,6 +68,37 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              {/* Braze Features Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsBrazeFeaturesOpen(!isBrazeFeaturesOpen)}
+                  className="text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors flex items-center"
+                >
+                  Braze
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isBrazeFeaturesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-[#818CF8]/10"
+                  >
+                    {brazeFeatureItems.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.path}
+                        className="block px-4 py-2 text-[#F5F5F5] hover:text-[#5ECDEF] hover:bg-[#1E1B4B]/50 transition-colors"
+                        onClick={() => setIsBrazeFeaturesOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -93,6 +134,40 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+            {/* Mobile Braze Features */}
+            <div className="space-y-2">
+              <button
+                onClick={() => setIsBrazeFeaturesOpen(!isBrazeFeaturesOpen)}
+                className="text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors flex items-center justify-center w-full"
+              >
+                Braze
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isBrazeFeaturesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="space-y-2"
+                >
+                  {brazeFeatureItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.path}
+                      className="block text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors pl-4"
+                      onClick={() => {
+                        setIsBrazeFeaturesOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </div>
           </nav>
         </motion.div>
       </header>
