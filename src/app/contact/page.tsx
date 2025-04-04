@@ -238,7 +238,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold mb-8 text-center text-[#5ECDEF]">Our Location</h2>
             <div className="aspect-w-16 aspect-h-9">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155710122!2d-73.987844924164!3d40.748440971389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6761576044287!2d-73.98561872415537!3d40.74715087138827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a8281726ad%3A0x47b0b3638d52e63b!2s169%20Madison%20Ave%20%232578%2C%20New%20York%2C%20NY%2010016%2C%20USA!5e0!3m2!1sen!2sin!4v1743765490457!5m2!1sen!2sin"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}

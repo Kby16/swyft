@@ -105,8 +105,14 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-[#D1D5DB]">
-                169 MADISON AVE STE 2578<br />
-                NEW YORK, NY 10016
+                <a
+                  href="https://www.google.com/maps/place/169+Madison+Ave+%232578,+New+York,+NY+10016,+USA/@40.7471509,-73.9856187,17z/data=!4m13!1m7!3m6!1s0x89c259a8281726ad:0x47b0b3638d52e63b!2s169+Madison+Ave+%232578,+New+York,+NY+10016,+USA!3b1!8m2!3d40.7471509!4d-73.9830438!3m4!1s0x89c259a8281726ad:0x47b0b3638d52e63b!8m2!3d40.7471509!4d-73.9830438?entry=ttu&g_ep=EgoyMDI1MDQwMS4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#D1D5DB] hover:text-[#5ECDEF] transition-colors">
+                  169 MADISON AVE STE 2578<br />
+                  NEW YORK, NY 10016
+                </a>
               </li>
             </ul>
           </div>
