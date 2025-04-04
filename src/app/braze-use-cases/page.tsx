@@ -171,13 +171,13 @@ export default function BrazeUseCasesPage() {
                 <div className="bg-black/30 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-4 text-[#5ECDEF]">E-commerce Success</h3>
                   <p className="text-[#D1D5DB]">
-                    "Using Braze, we&apos;ve seen a 40% increase in customer engagement and a 25% boost in conversion rates through personalized messaging and targeted campaigns."
+                    &quot;Using Braze, we&apos;ve seen a 40% increase in customer engagement and a 25% boost in conversion rates through personalized messaging and targeted campaigns.&quot;
                   </p>
                 </div>
                 <div className="bg-black/30 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-4 text-[#5ECDEF]">Media Platform Growth</h3>
                   <p className="text-[#D1D5DB]">
-                    "Braze has helped us achieve a 60% increase in user retention and a 35% growth in daily active users through our content recommendation system."
+                    &quot;Braze has helped us achieve a 60% increase in user retention and a 35% growth in daily active users through our content recommendation system.&quot;
                   </p>
                 </div>
               </div>
@@ -185,13 +185,13 @@ export default function BrazeUseCasesPage() {
                 <div className="bg-black/30 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-4 text-[#5ECDEF]">Financial Services Impact</h3>
                   <p className="text-[#D1D5DB]">
-                    "Our customer satisfaction scores improved by 45% after implementing Braze&apos;s personalized communication system for transaction alerts and account updates."
+                    &quot;Our customer satisfaction scores improved by 45% after implementing Braze&apos;s personalized communication system for transaction alerts and account updates.&quot;
                   </p>
                 </div>
                 <div className="bg-black/30 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-4 text-[#5ECDEF]">Travel Industry Results</h3>
                   <p className="text-[#D1D5DB]">
-                    "With Braze, we&apos;ve achieved a 50% increase in booking rates and a 30% improvement in customer loyalty through targeted travel recommendations."
+                    &quot;With Braze, we&apos;ve achieved a 50% increase in booking rates and a 30% improvement in customer loyalty through targeted travel recommendations.&quot;
                   </p>
                 </div>
               </div>
