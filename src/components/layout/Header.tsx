@@ -69,7 +69,7 @@ export default function Header() {
                 </Link>
               ))}
               {/* Braze Features Dropdown */}
-              <div className="relative">
+              <div className="relative group">
                 <button
                   onClick={() => setIsBrazeFeaturesOpen(!isBrazeFeaturesOpen)}
                   className="text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors flex items-center"
@@ -84,13 +84,13 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-0 mt-2 w-48 bg-black/90 backdrop-blur-sm rounded-lg shadow-lg border border-[#818CF8]/10"
+                    className="absolute top-full right-0 mt-2 w-56 bg-black/95 backdrop-blur-sm rounded-lg shadow-lg border border-[#818CF8]/10 z-50"
                   >
                     {brazeFeatureItems.map((item) => (
                       <Link
                         key={item.name}
                         href={item.path}
-                        className="block px-4 py-2 text-[#F5F5F5] hover:text-[#5ECDEF] hover:bg-[#1E1B4B]/50 transition-colors"
+                        className="block px-6 py-3 text-[#F5F5F5] hover:text-[#5ECDEF] hover:bg-[#1E1B4B]/50 transition-colors whitespace-nowrap"
                         onClick={() => setIsBrazeFeaturesOpen(false)}
                       >
                         {item.name}
@@ -123,12 +123,12 @@ export default function Header() {
           animate={{ height: isMobileMenuOpen ? 'auto' : 0 }}
           className="md:hidden overflow-hidden bg-gradient-to-b from-black via-[#1a1a1a] to-black"
         >
-          <nav className="py-4 px-4 text-center space-y-4">
+          <nav className="py-4 px-4 space-y-4 max-h-[calc(100vh-5rem)] overflow-y-auto">
             {navItems.map((item) => (
               <Link 
                 key={item.name}
                 href={item.path}
-                className="block text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors"
+                className="block text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
@@ -138,10 +138,15 @@ export default function Header() {
             <div className="space-y-2">
               <button
                 onClick={() => setIsBrazeFeaturesOpen(!isBrazeFeaturesOpen)}
-                className="text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors flex items-center justify-center w-full"
+                className="text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors flex items-center w-full py-2"
               >
-                Braze
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span>Braze</span>
+                <svg 
+                  className={`w-4 h-4 ml-1 transform transition-transform ${isBrazeFeaturesOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -150,13 +155,13 @@ export default function Header() {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="space-y-2"
+                  className="pl-6 space-y-2 bg-[#1E1B4B]/20 rounded-lg py-2"
                 >
                   {brazeFeatureItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.path}
-                      className="block text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors pl-4"
+                      className="block text-[#F5F5F5] hover:text-[#5ECDEF] transition-colors py-2"
                       onClick={() => {
                         setIsBrazeFeaturesOpen(false);
                         setIsMobileMenuOpen(false);
@@ -173,9 +178,7 @@ export default function Header() {
       </header>
 
       {/* Push Page Content Down */}
-      <main className="pt-16">
-        {/* Your page content goes here */}
-      </main>
+      <div className="h-20" />
     </>
   );
 }
