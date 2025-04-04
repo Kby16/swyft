@@ -13,6 +13,8 @@ const AzureChatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasWelcomed, setHasWelcomed] = useState(false);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -22,6 +24,34 @@ const AzureChatbot = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Show welcome message on first open
+  useEffect(() => {
+    if (isOpen && !hasWelcomed) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "Welcome to Swyft! How can I help you today?",
+        },
+      ]);
+      setHasWelcomed(true);
+    }
+  }, [isOpen, hasWelcomed]);
+
+  const formatMessage = (text: string) => {
+    // Remove "*" characters (often used for Markdown bold/italic)
+    let formattedText = text.replace(/\*/g, "");
+
+    // Convert URLs to clickable links
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    formattedText = formattedText.replace(
+      urlRegex,
+      (url) => `<a href="${url}" target="_blank" class="text-blue-400 underline">${url}</a>`
+    );
+
+    return formattedText;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +72,7 @@ const AzureChatbot = () => {
       const data = await response.json();
       const assistantMessage: Message = {
         role: "assistant",
-        content: data.message,
+        content: formatMessage(data.message), // Format response
       };
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
@@ -113,7 +143,11 @@ const AzureChatbot = () => {
                   ) : (
                     <FaComments className="w-5 h-5 mr-2 mt-1" />
                   )}
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  {/* Render formatted message safely */}
+                  <p
+                    className="whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{ __html: message.content }}
+                  />
                 </div>
               </div>
             </div>
